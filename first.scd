@@ -2,6 +2,9 @@
 
 // modulate a sine frequency and a noise amplitude with another sine
 // whose frequency depends on the horizontal mouse pointer position
+
+
+
 var mouseMod={
         var x = SinOsc.ar(MouseX.kr(1, 50));
 	    var y = SinOsc.ar(MouseY.kr(1, 50));
@@ -9,6 +12,10 @@ var mouseMod={
         SinOsc.ar(100 * x + 80*y, 0, 0.8)
         +
         PinkNoise.ar(0.1 * x + 0.1);
+};
+
+var kbInput={
+	SinOsc.ar(500, 0, KeyState.kr(39, 0, 0.8)); // s-näppäin
 };
 
 
@@ -28,4 +35,5 @@ var synth = {
 kick.play();
 synth.play();
 mouseMod.play();
+kbInput.play();
 )
