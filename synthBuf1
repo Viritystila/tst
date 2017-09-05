@@ -1,0 +1,273 @@
+;; Connected to nREPL server - nrepl://localhost:41823
+;; CIDER 0.14.0 (Berlin), nREPL 0.2.12
+;; Clojure 1.8.0, Java 1.8.0_131
+;;     Docs: (doc function-name)
+;;           (find-doc part-of-name)
+;;   Source: (source function-name)
+;;  Javadoc: (javadoc java-object-or-class)
+;;     Exit: <C-c C-q>
+;;  Results: Stored in vars *1, *2, *3, an exception in *e;
+;; ======================================================================
+;; If you’re new to CIDER it is highly recommended to go through its
+;; manual first. Type <M-x cider-view-manual> to view it.
+;; In case you’re seeing any warnings you should consult the manual’s
+;; "Troubleshooting" section.
+;;
+;; Here are few tips to get you started:
+;;
+;; * Press <M-h m> to see a list of the keybindings available (this
+;;   will work in every Emacs buffer)
+;; * Press <,> to quickly invoke some REPL command
+;; * Press <C-c C-z> to switch between the REPL and a Clojure file
+;; * Press <M-.> to jump to the source of something (e.g. a var, a
+;;   Java method)
+;; * Press <M-RET> to view the documentation for something (e.g.
+;;   a var, a Java method)
+;; * Enable ‘eldoc-mode’ to display function & method signatures in the minibuffer.
+;; * Print CIDER’s refcard and keep it close to your keyboard.
+;;
+;; CIDER is super customizable - try <M-x customize-group cider> to
+;; get a feel for this. If you’re thirsty for knowledge you should try
+;; <M-x cider-drink-a-sip>.
+;;
+;; If you think you’ve encountered a bug (or have some suggestions for
+;; improvements) use <M-x cider-report-bug> to report it.
+;;
+;; Above all else - don’t panic! In case of an emergency - procure
+;; some (hard) cider and enjoy it responsibly!
+;;
+;; You can remove this message with the ‘cider-repl-clear-help-banner’ command.
+;; You can disable it from appearing on start by setting
+;; ‘cider-repl-display-help-banner’ to nil.
+;; ======================================================================
+WARNING: CIDER's version (0.14.0) does not match cider-nrepl's version (0.12.0). Things will break!
+         More information.
+WARNING: clj-refactor and refactor-nrepl are out of sync.
+Their versions are 2.3.0-SNAPSHOT and 2.2.0, respectively.
+You can mute this warning by changing cljr-suppress-middleware-warnings.
+user>
+--> Connecting to internal SuperCollider server...
+--> Connection established (use 'overtone.live)
+--> Loading Overtone...
+  **********************************************************
+       WARNING: JVM argument TieredStopAtLevel=1 is active, and may
+       lead to reduced performance. This happens to currently be the
+       default lein setting:
+
+       https://github.com/technomancy/leiningen/pull/1230
+
+       If you didn't intend this JVM arg to be specified, you can turn
+       it off in your project.clj file or your global
+       ~/.lein/profiles.clj file by adding the key-val
+
+       :jvm-opts ^:replace []
+       **********************************************************
+--> Booting internal SuperCollider server...
+
+    _____                 __
+   / __  /_  _____  _____/ /_____  ____  ___
+  / / / / | / / _ \/ ___/ __/ __ \/ __ \/ _ \
+ / /_/ /| |/ /  __/ /  / /_/ /_/ / / / /  __/
+ \____/ |___/\___/_/   \__/\____/_/ /_/\___/
+
+   Collaborative Programmable Music. v0.10.1
+
+
+Hello Mikael. Do you feel it? I do. Creativity is rushing through your veins today!
+
+nil
+user> (definst shit [freq3 1] (* env-gen (adsr 1.0 1.0 1.0 1.0) (+ (sin-osc freq3 3.14) (saw freq3))))
+CompilerException java.lang.IllegalArgumentException: Error in checker for ugen ==> binary-op-u-gen
+Error: after initialisation, not all inputs to this ugen were numbers or other ugens (inputs which are explicitly allowed to be other data types (i.e strings) will have been converted to numbers at this point): [#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0.0]
+Supplied args: (#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0)
+Expected arg keys: (:a :b)
+Merged args: {:a #object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"], :b 0}, compiling:(form-init1506152130829663642.clj:79:7)
+user> (definst shit [freq1 60 freq2 80 freq3 1] (* env-gen (adsr 1.0 1.0 1.0 1.0) (+ (sin-osc freq3 3.14) (saw freq3))))
+CompilerException java.lang.IllegalArgumentException: Error in checker for ugen ==> binary-op-u-gen
+Error: after initialisation, not all inputs to this ugen were numbers or other ugens (inputs which are explicitly allowed to be other data types (i.e strings) will have been converted to numbers at this point): [#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0.0]
+Supplied args: (#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0)
+Expected arg keys: (:a :b)
+Merged args: {:a #object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"], :b 0}, compiling:(form-init1506152130829663642.clj:85:7)
+user> (definst shit [freq3 1] (* env-gen (adsr 1.0 1.0 1.0 1.0) (+ (sin-osc freq3 3.14) (saw freq3))))
+CompilerException java.lang.IllegalArgumentException: Error in checker for ugen ==> binary-op-u-gen
+Error: after initialisation, not all inputs to this ugen were numbers or other ugens (inputs which are explicitly allowed to be other data types (i.e strings) will have been converted to numbers at this point): [#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0.0]
+Supplied args: (#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0)
+Expected arg keys: (:a :b)
+Merged args: {:a #object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"], :b 0}, compiling:(form-init1506152130829663642.clj:91:7)
+user> (definst shit [freq3 1] (* env-gen (adsr 1.0 1.0 1.0 1.0) (+ (sin-osc freq3) (saw freq3))))
+CompilerException java.lang.IllegalArgumentException: Error in checker for ugen ==> binary-op-u-gen
+Error: after initialisation, not all inputs to this ugen were numbers or other ugens (inputs which are explicitly allowed to be other data types (i.e strings) will have been converted to numbers at this point): [#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0.0]
+Supplied args: (#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0)
+Expected arg keys: (:a :b)
+Merged args: {:a #object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"], :b 0}, compiling:(form-init1506152130829663642.clj:97:7)
+user> (definst shit [freq3 1] (saw freq3))
+CompilerException java.lang.IllegalArgumentException: Error in checker for ugen ==> binary-op-u-gen
+Error: after initialisation, not all inputs to this ugen were numbers or other ugens (inputs which are explicitly allowed to be other data types (i.e strings) will have been converted to numbers at this point): [#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0.0]
+Supplied args: (#object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"] 0)
+Expected arg keys: (:a :b)
+Merged args: {:a #object[overtone.helpers.lib.proxy$java.lang.Object$Associative$IFn$IMeta$IObj$64df10c2 0x2ec28889 "Callable Map"], :b 0}, compiling:(form-init1506152130829663642.clj:103:7)
+user> 
+(definst shit [freq3 1] 
+RuntimeException EOF while reading, starting at line 110  clojure.lang.Util.runtimeException (Util.java:221)
+user> 
+(definst shit [freq3 1] 
+RuntimeException EOF while reading, starting at line 113  clojure.lang.Util.runtimeException (Util.java:221)
+user>
+ 
+user> 
+user> 
+user> 
+user> (definst shit [] (saw 22))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 37>
+user> (kill 37)
+nil
+user> (definst shit [freq1 1 phase1 3.14] ((sin-osc freq1 phase1)))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: freq1 in this context, compiling:(*cider-repl localhost*:126:42) 
+user> (definst shit [freq1 1 phase 3.14] ((sin-osc freq1 phase1)))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: phase1 in this context, compiling:(*cider-repl localhost*:128:43) 
+user> (definst shit [freq1 1 phase1 3.14] (sin-osc freq1 phase1))
+CompilerException java.lang.ClassCastException: overtone.sc.machinery.ugen.sc_ugen.SCUGen cannot be cast to clojure.lang.IFn, compiling:(form-init1506152130829663642.clj:130:7) 
+user> (definst shit [freq1 1 phase1 3.14] (sin-osc freq1 phase1))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 38>
+user> (kill 38)
+nil
+user> (definst shit [freq1 69 phase1 3.14] (sin-osc freq1 phase1))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 39>
+user> (stop)
+nil
+user> (definst shit [freq1 69 phase1 3.14] (* (env-gen (adsr 1.0 1.0 1.0 1.0)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: .10 in this context, compiling:(*cider-repl localhost*:144:56) 
+user> (definst shit [freq1 69 phase1 3.14] (* (env-gen (adsr 1.0 1.0 1.0 1.0)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 40>
+user> (stop 40)
+ArityException Wrong number of args (1) passed to: server/stop  clojure.lang.AFn.throwArity (AFn.java:429)
+user> (stop)
+nil
+user> (definst shit [freq1 1 phase1 3.14] (* (env-gen (sin-osc 60)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+CompilerException java.lang.Exception: Invalid ugen rate.  The env-gen ugen is control rate, but it has a sin-osc input ugen running at the faster audio rate.  Besides special cases, the a2k ugen and demand rate ugens (which are allowed kr inputs), all ugens must be the same speed or faster than their inputs., compiling:(form-init1506152130829663642.clj:154:7) 
+user> (definst shit [freq1 1 phase1 3.14] (* (env-gen (sin-osc 60)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+CompilerException java.lang.Exception: Invalid ugen rate.  The env-gen ugen is control rate, but it has a sin-osc input ugen running at the faster audio rate.  Besides special cases, the a2k ugen and demand rate ugens (which are allowed kr inputs), all ugens must be the same speed or faster than their inputs., compiling:(form-init1506152130829663642.clj:156:7) 
+user> (definst shit [freq1 1 phase1 3.14] (* (env-gen (sin-osc 0.5)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+CompilerException java.lang.Exception: Invalid ugen rate.  The env-gen ugen is control rate, but it has a sin-osc input ugen running at the faster audio rate.  Besides special cases, the a2k ugen and demand rate ugens (which are allowed kr inputs), all ugens must be the same speed or faster than their inputs., compiling:(form-init1506152130829663642.clj:158:7) 
+user> (definst shit [freq1 1 phase1 3.14] (* (env-gen (sin 0.5)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 41>
+TOO LOUD!! (clipped) Bus: TOO LOUD!! (clipped) Bus:1  - lower master vol
+0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+user> (stop)
+nil
+user> (definst shit [freq1 1 phase1 3.14] (* (env-gen (sin 60)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 42>
+user> (stop)
+nil
+user> (definst shit [freq1 1 phase1 3.14] (* (env-gen (sin 600)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 43>
+user> (definst shit [freq1 69 phase1 3.14] (* (env-gen (adsr 1.0 1.0 1.0 1.0)) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+#<instrument: shit>
+user> (stop)
+nil
+user> (shit)
+#<synth-node[loading]: user/shit 44>
+user> (stop)
+nil
+user> (definst shit [freq1 69 phase1 3.14] (* (env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1))))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 45>
+user> (stop)
+nil
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* (env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1)) (sin-osc freq2 phase2)))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 46>
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+user> (stop)
+nil
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* (env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1)) (sin-osc freq2 phase2) (0.3)))
+CompilerException java.lang.ClassCastException: java.lang.Double cannot be cast to clojure.lang.IFn, compiling:(form-init1506152130829663642.clj:212:7) 
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* 0.3(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1)) (sin-osc freq2 phase2) ))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 47>
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol 
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+TOO LOUD!! (clipped) Bus: 0 - lower master vol
+TOO LOUD!! (clipped) Bus: 1 - lower master vol
+user>
+TOO LOUD!! (clipped) Bus: 0 - lower master vol (stop)
+nil
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* 0.23(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (sin-osc freq1 phase1) (lf-pulse:ar freq1) (saw freq1)) (sin-osc freq2 phase2) ))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 48>
+user> (stop)
+nil
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* 0.23(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (* 2 (sin-osc freq1 phase1)) (lf-pulse:ar freq1) (saw freq1)) (sin-osc freq2 phase2) ))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 49>
+user> (stop)
+nil
+user> (definst shit [freq1 1 phase1 3 freq2 60 phase2 0.0] (* 0.23(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (* 2 (sin-osc freq1 phase1)) (lf-pulse:ar freq1 0.5 1.0) (saw freq1) (* 0.03 (pink-noise))) (sin-osc freq2 phase2) ))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 50>
+user> (stop)
+nilq
+user> ) ))
+RuntimeException Unmatched delimiter: )  clojure.lang.Util.runtimeException (Util.java:221)
+RuntimeException Unmatched delimiter: )  clojure.lang.Util.runtimeException (Util.java:221)
+RuntimeException Unmatched delimiter: )  clojure.lang.Util.runtimeException (Util.java:221)
+
+
+
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* 0.23(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (* 2 (sin-osc freq1 phase1)) (lf-pulse:ar freq1) (saw freq1)) (sin-osc freq2 phase2) ))
+#<instrument: shit>
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* 0.23(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (* 2 (sin-osc freq1 phase1)) (lf-pulse:ar freq1) (saw freq1) (* 0.03 (pink-ni))) (sin-osc freq2 phase2) ))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: pink-ni in this context, compiling:(*cider-repl localhost*:255:188) 
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* 0.23(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (* 2 (sin-osc freq1 phase1)) (lf-pulse:ar freq1) (saw freq1) (* 0.03 (pink-noise))) (sin-osc freq2 phase2) ))
+#<instrument: shit>
+user> (shit)
+#<synth-node[loading]: user/shit 51>
+user> (def o-synthdef (:sdef shit))
+#'user/o-synthdef
+user> (o-synthdef)
+ArityException Wrong number of args (0) passed to: PersistentArrayMap  clojure.lang.AFn.throwArity (AFn.java:429)
+user> (defsynth help-diskout [bufnum 0] (disk-out bufnum (in 0 2)))
+#<synth: help-diskout>
+user> (def o-synthdef (:sdef help-diskout))
+#'user/o-synthdef
+user> (o-synthdef)
+ArityException Wrong number of args (0) passed to: PersistentArrayMap  clojure.lang.AFn.throwArity (AFn.java:429)
+user> (definst shit [freq1 1 phase1 3.14 freq2 60 phase2 0.0] (* 0.23(env-gen (adsr 1.0 1.0 1.0 1.0) 1 1 0 1 FREE) (+ (* 2 (sin-osc freq1 phase1)) (lf-pulse:ar freq1) (saw freq1) (* 0.03 (pink-noise))) (sin-osc freq2 phase2) ))
+#<instrument: shit>
+user> 
